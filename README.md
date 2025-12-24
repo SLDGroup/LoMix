@@ -17,7 +17,7 @@ Official repository of NeurIPS 2025 paper [LoMix: Learnable Weighted Multi‑Sca
 ## LoMix Supervision
 
 <p align="center">
-<img src="lomix_supervision.jpg" width=100% height=40% 
+<img src="lomix_supervision.png" width=100% height=40% 
 class="center">
 </p>
 
