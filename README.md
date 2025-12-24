@@ -37,6 +37,7 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu113/torch1.11.0/index.html
 
 pip install -r requirements.txt
+```
 
 ### Data preparation:
 - **Synapse Multi-organ dataset:**
