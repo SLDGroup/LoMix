@@ -200,7 +200,7 @@ class CombinatorialMutationsLossModule(nn.Module):
 
         if label_batch==None and ce_loss==None and dice_loss==None:
             return fused_logits
-        if self.supervision == 'mutation':
+        if self.supervision in ['mutation', 'lomix']:
             final_loss = deep_supervision_loss + mutation_loss
         else:
             final_loss = deep_supervision_loss
@@ -340,7 +340,7 @@ def trainer_synapse(args, model, snapshot_path, supervision='lomix', operations=
             mutation_loss = 0.0
             lc1, lc2 = 0.3, 0.7 #0.3, 0.7
             #print(label_batch.shape)
-            if supervision in ['mutation', 'deep_supervision']:
+            if supervision in ['mutation', 'lomix', 'deep_supervision']:
                 loss, deep_supervision_loss, mutation_loss = loss_module(P, label_batch, ce_loss, dice_loss)
             else:
                 loss_ce = ce_loss(P[-1], label_batch[:].long())

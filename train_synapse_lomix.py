@@ -100,8 +100,15 @@ if __name__ == "__main__":
         dw_mode = 'parallel'
     
     print(aggregation)
-    operations = ['add', 'mul', 'wf', 'concat']
-    use_learnable_weights = True 
+    use_learnable_weights = False
+    if args.supervision == 'lomix':
+        operations = ['add', 'mul', 'wf', 'concat']
+        use_learnable_weights = True
+    elif args.supervision == 'mutation':
+        operations =['add']
+    else:
+        operations = []
+
     if use_learnable_weights == True:
         learnable = 'learnable_'
     else:
